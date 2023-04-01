@@ -2,6 +2,8 @@ package org.devinhouse.semana09.mercadosenai.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "produtos")
 public class Produto {
@@ -11,6 +13,8 @@ public class Produto {
     private String nome;
     private String descricao;
     private double preco;
+    @ManyToMany(mappedBy="produtos")
+    private List<Cliente> clientes;
     @ManyToOne
     private Categoria categoria;
 
@@ -55,5 +59,13 @@ public class Produto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
     }
 }

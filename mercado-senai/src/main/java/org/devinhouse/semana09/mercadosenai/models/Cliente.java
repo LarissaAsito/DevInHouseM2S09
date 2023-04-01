@@ -2,6 +2,8 @@ package org.devinhouse.semana09.mercadosenai.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "clientes")
 public class Cliente {
@@ -13,7 +15,10 @@ public class Cliente {
     @Column(name = "data_nascimento")
     private String dataNascimento;
     @ManyToMany
-    private Produto produto;
+    @JoinTable(name="cliente_produto",
+            joinColumns={@JoinColumn(name="cliente_id")},
+            inverseJoinColumns={@JoinColumn(name="produto_id")})
+    private List<Produto> produtos;
 
     public Cliente() {
     }
@@ -50,11 +55,11 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }
