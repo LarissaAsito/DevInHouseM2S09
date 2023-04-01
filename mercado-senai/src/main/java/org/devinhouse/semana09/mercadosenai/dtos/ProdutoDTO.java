@@ -1,6 +1,7 @@
 package org.devinhouse.semana09.mercadosenai.dtos;
 
 import jakarta.persistence.ManyToOne;
+import org.devinhouse.semana09.mercadosenai.models.Categoria;
 
 public class ProdutoDTO {
     private int id;

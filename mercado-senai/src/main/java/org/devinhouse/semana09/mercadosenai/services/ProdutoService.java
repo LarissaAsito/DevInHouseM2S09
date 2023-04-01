@@ -12,7 +12,6 @@ public class ProdutoService {
 
     public void salvar(Produto produto){
         this.repository.save(produto);
-
     }
 
     public void excluir(Produto produto){
