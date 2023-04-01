@@ -1,0 +1,5 @@
+Diferença entre JDBC, JPA e Hibernate/Spring Data
+
+O JDBC (Java DataBase Connectivity) é uma camada de abstração entre a aplicação e os drivers dos bancos. 
+Já o JPA (Java Persistence API) é uma especificação para padronizar o mapeamento objeto-relacional em Java. Com o JPA criou-se um padrão que todas as bibliotecas de ORM (Object Relational Mapping) precisam utilizar, e assim podemos trocar de uma implementação de ORM para outra sem grandes esforços.
+O Hibernate implementa o conceito de ORM, ou seja, faz o mapeamento, a ponte entre as tabelas/colunas dos bancos relacionais com as classes/atributos do código orientado a objetos. Este segue a padronização do JPA.
